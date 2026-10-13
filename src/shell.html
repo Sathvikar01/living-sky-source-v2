@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sathvik A R — Living Sky</title>
+<meta name="description" content="Sathvik A R · CS Undergrad · AI/ML · Agents · Full Stack">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<div id="fallback"></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="veil"></div>
+<svg id="lgdefs" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs></defs></svg>
+
+<div id="intro" role="status"><div class="mix"><div class="sw"><i></i><i></i><i></i><i></i><i></i></div><p>mixing the palette…</p></div></div>
+
+<nav id="nav" class="glass" aria-label="Sections">
+  <a class="brand" href="#hero" data-go="hero">Sathvik</a>
+  <a href="#about" data-go="about">About</a>
+  <a href="#anvaya" data-go="anvaya">Anvaya</a>
+  <a href="#projects" data-go="projects">Projects</a>
+  <a href="#toolkit" data-go="toolkit">Toolkit</a>
+  <a href="#contact" data-go="contact">Contact</a>
+  <span class="prog" aria-hidden="true"><b></b></span>
+</nav>
+
+<aside id="readout" aria-label="Live sky readout">
+  <button class="pill glass jelly" id="pill" aria-expanded="false" aria-controls="rpanel">
+    <span class="dot sky" id="r-sky"></span><span class="city" id="r-city">Your sky</span><span class="sep"></span>
+    <span id="r-time">--:--</span><span class="sep hide-s"></span><span class="muted hide-s" id="r-phase">—</span>
+    <span class="sep"></span><span id="r-temp">—°</span>
+  </button>
+  <div class="r-panel glass" id="rpanel" hidden>
+    <dl class="r-grid">
+      <div><dt>Place</dt><dd id="rp-city">Your sky</dd></div>
+      <div><dt>Local time</dt><dd id="rp-time">--:--</dd></div>
+      <div><dt>Phase</dt><dd id="rp-phase">—</dd></div>
+      <div><dt>Condition</dt><dd id="rp-cond">—</dd></div>
+      <div><dt>Temp</dt><dd id="rp-temp">—</dd></div>
+      <div><dt>Feels like</dt><dd id="rp-feels">—</dd></div>
+      <div><dt>Wind</dt><dd id="rp-wind">—</dd></div>
+      <div><dt>Humidity</dt><dd id="rp-hum">—</dd></div>
+      <div><dt>Sunrise</dt><dd id="rp-rise">—</dd></div>
+      <div><dt>Sunset</dt><dd id="rp-set">—</dd></div>
+    </dl>
+    <p class="r-src" id="rp-src">Sun &amp; moon computed locally</p>
+    <div class="picker">
+      <h3>Paint another sky</h3>
+      <div class="row" id="pk-phase"></div>
+      <div class="row" id="pk-cond"></div>
+      <button class="live" id="pk-live">Back to live</button>
+    </div>
+  </div>
+</aside>
+
+<div id="spacer"></div>
+<main id="scroller"></main>
+<div id="sheet-layer"><div class="scrim"></div></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/*__DATA__*/
+</script>
+<script>
+/*__APP__*/
+</script>
+<script>
+/*__GL__*/
+</script>
+</body>
+</html>

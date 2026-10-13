@@ -1,0 +1,10 @@
+# Local browser and test artifacts
+.playwright-cli/
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Vercel project metadata
+.vercel/
