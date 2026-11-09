@@ -227,7 +227,7 @@ $("#scroller").innerHTML = `
   <p class="kicker rv">04 · ${esc(KIT.name)}</p>
   <h2 class="sec rv" id="h-toolkit">${esc(KIT.name)}</h2>
   <p class="kit-intro rv">${esc(KIT.summary)}</p>
-  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(": "); const list = items.replace(/\.$/, "").split(", ");
+  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(" — "); const list = items.replace(/\.$/, "").split(", ");
     return `<div class="stone glass refract rv" style="--rd:${(i * 0.12).toFixed(2)}s"><h3>${esc(h)}</h3><ul class="chips">${list.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`; }).join("")}</div>
   <p class="kitstatus rv">${KIT.status.map((s) => esc(s.label)).join(" · ")}</p>
 </div></section>

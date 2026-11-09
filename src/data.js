@@ -96,7 +96,7 @@ const PROJECTS = [
     repo:"https://github.com/Sathvikar01/Eternal", year:"2026" },
   { id:"toolkit", name:"Toolkit", domain:"toolkit", tier:"featured-2",
     summary:"What the work in this field is built with: languages, full stack, data and AI, and how it is built and tested.",
-    points:["Languages: Python, TypeScript, JavaScript, SQL.","Full stack: React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI: PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test: Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
+    points:["Languages — Python, TypeScript, JavaScript, SQL.","Full stack — React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI — PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test — Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
     stack:[], status:[{kind:"toolkit",label:"THE GROUND THIS FIELD STANDS ON"}], tint:"#6FA8C7", year:"2026" },
   { id:"sketch", name:"Sketch to Photo", domain:"ai", tier:"secondary",
     summary:"Explainable cross-modal face retrieval: matching forensic sketches to photographs.",
