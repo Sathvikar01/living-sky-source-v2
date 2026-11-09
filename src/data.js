@@ -1,4 +1,4 @@
-/* Content — verbatim from content-source.ts (image/plate/coordinate fields omitted). */
+/* Content - verbatim from content-source.ts (image/plate/coordinate fields omitted). */
 const PERSON = {
   name: "Sathvik A R",
   short: "Sathvik",
@@ -25,29 +25,30 @@ const CONTACT_LINES = [
   { label: "X", value: "@Sathvik_48", href: PERSON.x, external: true },
 ];
 const ABOUT = {
-  statement: "I build AI agents that ship — and measure that they work.",
+  statement: "AI agents, retrieval, speech and full-stack systems.",
   paragraphs: [
-    "I'm a computer science undergraduate specialising in AI & ML, working across retrieval, agents, speech and full-stack systems.",
-    "I care about the evaluation more than the demo: define the metric first, explore options, ablate, verify independently, then ship. If a problem needs something I don't know yet, that's the part I enjoy most.",
+    "I'm a computer science student at PES University, specialising in AI & ML.",
+    "I'm interested in AI agents, retrieval, speech and full-stack systems.",
   ],
   education: [{
-    years: "2023 — 2027", place: "PES University", location: "Bengaluru",
+    years: "2023 to 2027", place: "PES University", location: "Bengaluru",
     stage: "B.Tech · Computer Science (AI & ML)", current: true,
     coursework: ["Machine Learning","Deep Learning","NLP","Data Structures & Algorithms","Database Systems","Operating Systems","Computer Networks","Cloud Computing"],
   }],
   highlights: [
+    { lead: "Global #27", detail: "HackerRank Orchestrate · Oct 2026 · 4,094 ranked, 53,000+ participants" },
     { lead: "Global #56", detail: "HackerRank Orchestrate · Jun 2026" },
     { lead: "Global #202 & #281", detail: "HackerRank Orchestrate · Aug & May 2026" },
     { lead: "AI Generalist Accelerator", detail: "Completed · 2025" },
     { lead: "Endurance runner", detail: "10Ks between builds." },
   ],
-  closing: "Still learning, still building — and always up for the next hard problem.",
+  closing: "Always up for a hard problem.",
 };
 const EXPERIENCE = {
-  id: "anvaya", name: "Anvaya — Multilingual Voice RAG", domain: "experience", org: "Independent build",
+  id: "anvaya", name: "Anvaya: Multilingual Voice RAG", domain: "experience", org: "Independent build",
   summary: "A voice and text assistant across 15 Indian-language partitions that declines when the evidence isn't there.",
   narrative: [
-    "A voice and text assistant across 15 Indian-language partitions — that declines when the evidence isn't there.",
+    "A voice and text assistant across 15 Indian-language partitions that declines when the evidence isn't there.",
     "Speech is transcribed, embedded with BGE-M3 and searched with FAISS over 22,413 chunks, at 0.39 ms P50 retrieval.",
     "A LangGraph orchestrator checks evidence sufficiency and citations before any answer is spoken back.",
     "Sealed test set: Recall@10 0.8908, MRR@10 0.5371.",
@@ -58,8 +59,13 @@ const EXPERIENCE = {
 };
 const PIPELINE = ["VOICE IN", "TRANSCRIBE", "BGE-M3 EMBED", "FAISS RETRIEVE", "EVIDENCE CHECK", "CITED ANSWER"];
 const PROJECTS = [
+  { id:"ghost", name:"Ghost Data Audit Agent", shortName:"Ghost Data", domain:"ai", tier:"featured-1",
+    summary:"An AI agent that checks whether a user's deleted data is really gone, built for HackerRank Orchestrate, October 2026.",
+    points:["Checks databases, replicas, logs, exports and backups for a user's data after a deletion request.","Decides whether the deletion is complete and lists the steps to finish it, with evidence for each step.","A rule-based guard checks the evidence and policy before any step is accepted.","Placed #27 of 4,094 ranked teams, out of 53,000+ participants."],
+    stack:["Python","Tool-calling agent","SQLite","PyMuPDF"], status:[{kind:"contest",label:"HACKERRANK ORCHESTRATE"}],
+    year:"2026" },
   { id:"triage", name:"Support Triage Agent", shortName:"Support Triage", domain:"ai", tier:"featured-1",
-    summary:"Classifies support tickets, redacts PII, retrieves company-scoped evidence and validates every grounded reply before it leaves — with hard escalation rules and prompt-injection checks.",
+    summary:"Classifies support tickets, redacts PII, retrieves company-scoped evidence and validates every grounded reply before it leaves, with hard escalation rules and prompt-injection checks.",
     points:["Classifies each incoming ticket and redacts personal information before anything else sees it.","Hybrid retrieval scoped to the right company's documents, so answers never borrow another tenant's facts.","Every drafted reply is validated against its evidence; hard escalation rules and prompt-injection checks decide what goes to a human.","Tested with an evaluator and a set of red-team cases."],
     stack:["Python","Hybrid retrieval","PII redaction","LLM evaluator","Red-team cases"], status:[{kind:"contest",label:"HACKERRANK ORCHESTRATE"}],
     repo:"https://github.com/Sathvikar01/support-triage-agent", year:"2026" },
@@ -70,11 +76,11 @@ const PROJECTS = [
     repo:"https://github.com/Sathvikar01/hackerrank-evidence-review", year:"2026" },
   { id:"cardsense", name:"CardSense India", shortName:"CardSense", domain:"product", tier:"featured-1",
     summary:"A credit-education platform: article search and tracking, Supabase auth over Postgres content, AI insights, PDF processing, validated forms and charts.",
-    points:["A credit-education platform for India: searchable articles and progress tracking.","Supabase handles auth, with the content itself kept in Postgres.","AI insights and PDF processing turn documents into something readable.","Validated forms and charts across a Next.js, React and TypeScript front end — deployed live."],
+    points:["A credit-education platform for India: searchable articles and progress tracking.","Supabase handles auth, with the content itself kept in Postgres.","AI insights and PDF processing turn documents into something readable.","Validated forms and charts across a Next.js, React and TypeScript front end, deployed live."],
     stack:["Next.js","React","TypeScript","Supabase","Postgres"], status:[{kind:"live",label:"LIVE DEMO"}],
     repo:"https://github.com/Sathvikar01/card-sense01", demo:"https://card-sense01.vercel.app", year:"2026" },
   { id:"sunroom", name:"Sunroom Canvas", domain:"systems", tier:"featured-1",
-    summary:"A collaborative canvas served as one service — UI, REST and WebSocket collaboration — over three RAFT replicas behind a gateway.",
+    summary:"A collaborative canvas served as one service (UI, REST and WebSocket collaboration) over three RAFT replicas behind a gateway.",
     points:["One service serves the UI, the REST API and real-time WebSocket collaboration.","Three RAFT replicas sit behind a gateway, so the shared canvas survives a lost node.","Covered by server tests, Playwright end-to-end tests, chaos tests and load tests.","Brought up together with Docker Compose."],
     stack:["Node.js","Express","WebSockets","RAFT","Docker Compose","Playwright"], status:[],
     repo:"https://github.com/Sathvikar01/Sunroom-Canvas", year:"2026" },
@@ -90,11 +96,11 @@ const PROJECTS = [
     repo:"https://github.com/Sathvikar01/Eternal", year:"2026" },
   { id:"toolkit", name:"Toolkit", domain:"toolkit", tier:"featured-2",
     summary:"What the work in this field is built with: languages, full stack, data and AI, and how it is built and tested.",
-    points:["Languages — Python, TypeScript, JavaScript, SQL.","Full stack — React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI — PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test — Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
+    points:["Languages: Python, TypeScript, JavaScript, SQL.","Full stack: React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI: PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test: Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
     stack:[], status:[{kind:"toolkit",label:"THE GROUND THIS FIELD STANDS ON"}], tint:"#6FA8C7", year:"2026" },
   { id:"sketch", name:"Sketch to Photo", domain:"ai", tier:"secondary",
     summary:"Explainable cross-modal face retrieval: matching forensic sketches to photographs.",
-    points:["Retrieves face photographs from a forensic sketch — a cross-modal search.","Explainable: Grad-CAM shows which regions drove each match.","Built in PyTorch with a Streamlit interface for running queries."],
+    points:["Retrieves face photographs from a forensic sketch, a cross-modal search.","Explainable: Grad-CAM shows which regions drove each match.","Built in PyTorch with a Streamlit interface for running queries."],
     stack:["PyTorch","Grad-CAM","Streamlit"], status:[],
     repo:"https://github.com/Sathvikar01/sketch-to-photo-retrieval", year:"2025" },
   { id:"skills", name:"Agent Engineering Skills", shortName:"Agent Skills", domain:"toolkit", tier:"secondary",

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Sathvik A R — Living Sky</title>
+<title>Sathvik A R | Living Sky</title>
 <meta name="description" content="Sathvik A R · CS Undergrad · AI/ML · Agents · Full Stack">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -388,21 +388,21 @@ html.js:not(.rm) .card.in .emblem .wash,html.js:not(.rm) .sheet .emblem .wash{op
 <aside id="readout" aria-label="Live sky readout">
   <button class="pill glass jelly" id="pill" aria-expanded="false" aria-controls="rpanel">
     <span class="dot sky" id="r-sky"></span><span class="city" id="r-city">Your sky</span><span class="sep"></span>
-    <span id="r-time">--:--</span><span class="sep hide-s"></span><span class="muted hide-s" id="r-phase">—</span>
-    <span class="sep"></span><span id="r-temp">—°</span>
+    <span id="r-time">--:--</span><span class="sep hide-s"></span><span class="muted hide-s" id="r-phase">-</span>
+    <span class="sep"></span><span id="r-temp">-°</span>
   </button>
   <div class="r-panel glass" id="rpanel" hidden>
     <dl class="r-grid">
       <div><dt>Place</dt><dd id="rp-city">Your sky</dd></div>
       <div><dt>Local time</dt><dd id="rp-time">--:--</dd></div>
-      <div><dt>Phase</dt><dd id="rp-phase">—</dd></div>
-      <div><dt>Condition</dt><dd id="rp-cond">—</dd></div>
-      <div><dt>Temp</dt><dd id="rp-temp">—</dd></div>
-      <div><dt>Feels like</dt><dd id="rp-feels">—</dd></div>
-      <div><dt>Wind</dt><dd id="rp-wind">—</dd></div>
-      <div><dt>Humidity</dt><dd id="rp-hum">—</dd></div>
-      <div><dt>Sunrise</dt><dd id="rp-rise">—</dd></div>
-      <div><dt>Sunset</dt><dd id="rp-set">—</dd></div>
+      <div><dt>Phase</dt><dd id="rp-phase">-</dd></div>
+      <div><dt>Condition</dt><dd id="rp-cond">-</dd></div>
+      <div><dt>Temp</dt><dd id="rp-temp">-</dd></div>
+      <div><dt>Feels like</dt><dd id="rp-feels">-</dd></div>
+      <div><dt>Wind</dt><dd id="rp-wind">-</dd></div>
+      <div><dt>Humidity</dt><dd id="rp-hum">-</dd></div>
+      <div><dt>Sunrise</dt><dd id="rp-rise">-</dd></div>
+      <div><dt>Sunset</dt><dd id="rp-set">-</dd></div>
     </dl>
     <p class="r-src" id="rp-src">Sun &amp; moon computed locally</p>
     <div class="picker">
@@ -421,7 +421,7 @@ html.js:not(.rm) .card.in .emblem .wash,html.js:not(.rm) .sheet .emblem .wash{op
 <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* Content — verbatim from content-source.ts (image/plate/coordinate fields omitted). */
+/* Content - verbatim from content-source.ts (image/plate/coordinate fields omitted). */
 const PERSON = {
   name: "Sathvik A R",
   short: "Sathvik",
@@ -448,29 +448,30 @@ const CONTACT_LINES = [
   { label: "X", value: "@Sathvik_48", href: PERSON.x, external: true },
 ];
 const ABOUT = {
-  statement: "I build AI agents that ship — and measure that they work.",
+  statement: "AI agents, retrieval, speech and full-stack systems.",
   paragraphs: [
-    "I'm a computer science undergraduate specialising in AI & ML, working across retrieval, agents, speech and full-stack systems.",
-    "I care about the evaluation more than the demo: define the metric first, explore options, ablate, verify independently, then ship. If a problem needs something I don't know yet, that's the part I enjoy most.",
+    "I'm a computer science student at PES University, specialising in AI & ML.",
+    "I'm interested in AI agents, retrieval, speech and full-stack systems.",
   ],
   education: [{
-    years: "2023 — 2027", place: "PES University", location: "Bengaluru",
+    years: "2023 to 2027", place: "PES University", location: "Bengaluru",
     stage: "B.Tech · Computer Science (AI & ML)", current: true,
     coursework: ["Machine Learning","Deep Learning","NLP","Data Structures & Algorithms","Database Systems","Operating Systems","Computer Networks","Cloud Computing"],
   }],
   highlights: [
+    { lead: "Global #27", detail: "HackerRank Orchestrate · Oct 2026 · 4,094 ranked, 53,000+ participants" },
     { lead: "Global #56", detail: "HackerRank Orchestrate · Jun 2026" },
     { lead: "Global #202 & #281", detail: "HackerRank Orchestrate · Aug & May 2026" },
     { lead: "AI Generalist Accelerator", detail: "Completed · 2025" },
     { lead: "Endurance runner", detail: "10Ks between builds." },
   ],
-  closing: "Still learning, still building — and always up for the next hard problem.",
+  closing: "Always up for a hard problem.",
 };
 const EXPERIENCE = {
-  id: "anvaya", name: "Anvaya — Multilingual Voice RAG", domain: "experience", org: "Independent build",
+  id: "anvaya", name: "Anvaya: Multilingual Voice RAG", domain: "experience", org: "Independent build",
   summary: "A voice and text assistant across 15 Indian-language partitions that declines when the evidence isn't there.",
   narrative: [
-    "A voice and text assistant across 15 Indian-language partitions — that declines when the evidence isn't there.",
+    "A voice and text assistant across 15 Indian-language partitions that declines when the evidence isn't there.",
     "Speech is transcribed, embedded with BGE-M3 and searched with FAISS over 22,413 chunks, at 0.39 ms P50 retrieval.",
     "A LangGraph orchestrator checks evidence sufficiency and citations before any answer is spoken back.",
     "Sealed test set: Recall@10 0.8908, MRR@10 0.5371.",
@@ -481,8 +482,13 @@ const EXPERIENCE = {
 };
 const PIPELINE = ["VOICE IN", "TRANSCRIBE", "BGE-M3 EMBED", "FAISS RETRIEVE", "EVIDENCE CHECK", "CITED ANSWER"];
 const PROJECTS = [
+  { id:"ghost", name:"Ghost Data Audit Agent", shortName:"Ghost Data", domain:"ai", tier:"featured-1",
+    summary:"An AI agent that checks whether a user's deleted data is really gone, built for HackerRank Orchestrate, October 2026.",
+    points:["Checks databases, replicas, logs, exports and backups for a user's data after a deletion request.","Decides whether the deletion is complete and lists the steps to finish it, with evidence for each step.","A rule-based guard checks the evidence and policy before any step is accepted.","Placed #27 of 4,094 ranked teams, out of 53,000+ participants."],
+    stack:["Python","Tool-calling agent","SQLite","PyMuPDF"], status:[{kind:"contest",label:"HACKERRANK ORCHESTRATE"}],
+    year:"2026" },
   { id:"triage", name:"Support Triage Agent", shortName:"Support Triage", domain:"ai", tier:"featured-1",
-    summary:"Classifies support tickets, redacts PII, retrieves company-scoped evidence and validates every grounded reply before it leaves — with hard escalation rules and prompt-injection checks.",
+    summary:"Classifies support tickets, redacts PII, retrieves company-scoped evidence and validates every grounded reply before it leaves, with hard escalation rules and prompt-injection checks.",
     points:["Classifies each incoming ticket and redacts personal information before anything else sees it.","Hybrid retrieval scoped to the right company's documents, so answers never borrow another tenant's facts.","Every drafted reply is validated against its evidence; hard escalation rules and prompt-injection checks decide what goes to a human.","Tested with an evaluator and a set of red-team cases."],
     stack:["Python","Hybrid retrieval","PII redaction","LLM evaluator","Red-team cases"], status:[{kind:"contest",label:"HACKERRANK ORCHESTRATE"}],
     repo:"https://github.com/Sathvikar01/support-triage-agent", year:"2026" },
@@ -493,11 +499,11 @@ const PROJECTS = [
     repo:"https://github.com/Sathvikar01/hackerrank-evidence-review", year:"2026" },
   { id:"cardsense", name:"CardSense India", shortName:"CardSense", domain:"product", tier:"featured-1",
     summary:"A credit-education platform: article search and tracking, Supabase auth over Postgres content, AI insights, PDF processing, validated forms and charts.",
-    points:["A credit-education platform for India: searchable articles and progress tracking.","Supabase handles auth, with the content itself kept in Postgres.","AI insights and PDF processing turn documents into something readable.","Validated forms and charts across a Next.js, React and TypeScript front end — deployed live."],
+    points:["A credit-education platform for India: searchable articles and progress tracking.","Supabase handles auth, with the content itself kept in Postgres.","AI insights and PDF processing turn documents into something readable.","Validated forms and charts across a Next.js, React and TypeScript front end, deployed live."],
     stack:["Next.js","React","TypeScript","Supabase","Postgres"], status:[{kind:"live",label:"LIVE DEMO"}],
     repo:"https://github.com/Sathvikar01/card-sense01", demo:"https://card-sense01.vercel.app", year:"2026" },
   { id:"sunroom", name:"Sunroom Canvas", domain:"systems", tier:"featured-1",
-    summary:"A collaborative canvas served as one service — UI, REST and WebSocket collaboration — over three RAFT replicas behind a gateway.",
+    summary:"A collaborative canvas served as one service (UI, REST and WebSocket collaboration) over three RAFT replicas behind a gateway.",
     points:["One service serves the UI, the REST API and real-time WebSocket collaboration.","Three RAFT replicas sit behind a gateway, so the shared canvas survives a lost node.","Covered by server tests, Playwright end-to-end tests, chaos tests and load tests.","Brought up together with Docker Compose."],
     stack:["Node.js","Express","WebSockets","RAFT","Docker Compose","Playwright"], status:[],
     repo:"https://github.com/Sathvikar01/Sunroom-Canvas", year:"2026" },
@@ -513,11 +519,11 @@ const PROJECTS = [
     repo:"https://github.com/Sathvikar01/Eternal", year:"2026" },
   { id:"toolkit", name:"Toolkit", domain:"toolkit", tier:"featured-2",
     summary:"What the work in this field is built with: languages, full stack, data and AI, and how it is built and tested.",
-    points:["Languages — Python, TypeScript, JavaScript, SQL.","Full stack — React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI — PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test — Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
+    points:["Languages: Python, TypeScript, JavaScript, SQL.","Full stack: React, Next.js, Node.js, Express, FastAPI, REST.","Data & AI: PostgreSQL, Supabase, RAG, LangGraph, FAISS, embeddings.","Build & test: Git, Docker Compose, Playwright, retrieval evaluation, grounding checks."],
     stack:[], status:[{kind:"toolkit",label:"THE GROUND THIS FIELD STANDS ON"}], tint:"#6FA8C7", year:"2026" },
   { id:"sketch", name:"Sketch to Photo", domain:"ai", tier:"secondary",
     summary:"Explainable cross-modal face retrieval: matching forensic sketches to photographs.",
-    points:["Retrieves face photographs from a forensic sketch — a cross-modal search.","Explainable: Grad-CAM shows which regions drove each match.","Built in PyTorch with a Streamlit interface for running queries."],
+    points:["Retrieves face photographs from a forensic sketch, a cross-modal search.","Explainable: Grad-CAM shows which regions drove each match.","Built in PyTorch with a Streamlit interface for running queries."],
     stack:["PyTorch","Grad-CAM","Streamlit"], status:[],
     repo:"https://github.com/Sathvikar01/sketch-to-photo-retrieval", year:"2025" },
   { id:"skills", name:"Agent Engineering Skills", shortName:"Agent Skills", domain:"toolkit", tier:"secondary",
@@ -751,7 +757,7 @@ $("#scroller").innerHTML = `
   <p class="kicker rv">03 · Projects</p>
   <h2 class="sec rv" id="h-projects">Projects</h2>
   <div class="grid">${SHOWN.map((p, i) => `
-    <article class="card glass jelly rv" style="--rd:${((i % 3) * 0.1).toFixed(2)}s" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(p.name)} — open details">
+    <article class="card glass jelly rv" style="--rd:${((i % 3) * 0.1).toFixed(2)}s" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(p.name)}: open details">
       <div class="top"><span class="emblem" style="color:var(--ink)">${emblem(p)}</span>
         <span class="meta"><span>${esc(p.year)}</span>${statusHTML(p)}</span></div>
       <h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p>
@@ -763,7 +769,7 @@ $("#scroller").innerHTML = `
   <p class="kicker rv">04 · ${esc(KIT.name)}</p>
   <h2 class="sec rv" id="h-toolkit">${esc(KIT.name)}</h2>
   <p class="kit-intro rv">${esc(KIT.summary)}</p>
-  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(" — "); const list = items.replace(/\.$/, "").split(", ");
+  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(": "); const list = items.replace(/\.$/, "").split(", ");
     return `<div class="stone glass refract rv" style="--rd:${(i * 0.12).toFixed(2)}s"><h3>${esc(h)}</h3><ul class="chips">${list.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`; }).join("")}</div>
   <p class="kitstatus rv">${KIT.status.map((s) => esc(s.label)).join(" · ")}</p>
 </div></section>
@@ -918,7 +924,7 @@ Object.assign(tgt, { cloud: 0.25, wind: 0.2, windX: 1, moonPhase: 0.5 });
 const cur = JSON.parse(JSON.stringify(tgt));
 cur.flash = 0; cur.time = 0; cur.scroll = 0; cur.mouse = [0.5, 0.3]; cur.rm = RM;
 window.SKY = cur;
-let liveNow = { phase: "morning", cond: null, condLabel: "—", el: 0 };
+let liveNow = { phase: "morning", cond: null, condLabel: "-", el: 0 };
 
 function computeTargets(snap) {
   const now = Date.now();
@@ -1063,7 +1069,7 @@ function localSunTimes() {
     if (prev >= 0 && e < 0 && set == null) set = ms - 5 * 60000 * (e / (e - prev));
     prev = e;
   }
-  const f = (ms) => (ms == null ? "—" : fmt(localParts(ms)));
+  const f = (ms) => (ms == null ? "-" : fmt(localParts(ms)));
   return [f(rise), f(set)];
 }
 const el = (id) => D.getElementById(id);
@@ -1079,24 +1085,24 @@ function updateReadout() {
   const ph = PHASE_NAME[info.phase];
   setTxt("r-phase", ph); setTxt("rp-phase", ph + (S.override.phase ? " · painted" : ""));
   const c = S.wx;
-  const condLabel = S.override.cond ? COND_NAME[S.override.cond] + " · painted" : c ? wmo(c.weather_code)[1] : "—";
+  const condLabel = S.override.cond ? COND_NAME[S.override.cond] + " · painted" : c ? wmo(c.weather_code)[1] : "-";
   setTxt("rp-cond", condLabel);
   const ok = (v) => c && typeof v === "number" && isFinite(v);
-  setTxt("r-temp", ok(c && c.temperature_2m) ? `${Math.round(c.temperature_2m)}°C` : "—°");
-  setTxt("rp-temp", ok(c && c.temperature_2m) ? `${c.temperature_2m.toFixed(1)} °C` : "—");
-  setTxt("rp-feels", ok(c && c.apparent_temperature) ? `${c.apparent_temperature.toFixed(1)} °C` : "—");
-  setTxt("rp-wind", ok(c && c.wind_speed_10m) ? `${Math.round(c.wind_speed_10m)} km/h` : "—");
-  setTxt("rp-hum", ok(c && c.relative_humidity_2m) ? `${Math.round(c.relative_humidity_2m)}%` : "—");
+  setTxt("r-temp", ok(c && c.temperature_2m) ? `${Math.round(c.temperature_2m)}°C` : "-°");
+  setTxt("rp-temp", ok(c && c.temperature_2m) ? `${c.temperature_2m.toFixed(1)} °C` : "-");
+  setTxt("rp-feels", ok(c && c.apparent_temperature) ? `${c.apparent_temperature.toFixed(1)} °C` : "-");
+  setTxt("rp-wind", ok(c && c.wind_speed_10m) ? `${Math.round(c.wind_speed_10m)} km/h` : "-");
+  setTxt("rp-hum", ok(c && c.relative_humidity_2m) ? `${Math.round(c.relative_humidity_2m)}%` : "-");
   const [lr, ls] = S.rise ? [S.rise, S.set] : localSunTimes();
   setTxt("rp-rise", lr); setTxt("rp-set", ls);
   setTxt("rp-src", (S.wx ? "Weather: Open-Meteo · " : "Weather offline · ") + (S.src === "geo" ? "precise location" : S.src === "ip" ? "approximate location" : "default location") + " · sun & moon computed locally");
   // greeting
   setTxt("greet-a", greeting(lp.h));
   const ck = liveNow.cond;
-  setTxt("greet-b", ck ? ` — ${CLAUSE[ck]}.` : "");
+  setTxt("greet-b", ck ? `, ${CLAUSE[ck]}.` : "");
   const fw = { night: ["Good night", "stars"], blue: ["Enjoy the", "blue hour"], dawn: ["Enjoy the", "dawn"], morning: ["Have a good", "morning"], midday: ["Have a good", "day"], afternoon: ["Enjoy the", "afternoon"], golden: ["Enjoy the", "golden hour"], sunset: ["Enjoy the", "sunset"], dusk: ["Have a good", "evening"] }[info.phase];
   const fh = el("h-contact");
-  if (fh) { const html = info.phase === "night" ? `Good night — <em>sleep well.</em>` : `${fw[0]} <em>${fw[1]}.</em>`; if (fh.dataset.h !== html) { fh.dataset.h = html; fh.innerHTML = html; } }
+  if (fh) { const html = info.phase === "night" ? `Good night, <em>sleep well.</em>` : `${fw[0]} <em>${fw[1]}.</em>`; if (fh.dataset.h !== html) { fh.dataset.h = html; fh.innerHTML = html; } }
   // picker state
   $$("#pk-phase button").forEach((b) => b.classList.toggle("on", b.dataset.v === S.override.phase));
   $$("#pk-cond button").forEach((b) => b.classList.toggle("on", b.dataset.v === S.override.cond));

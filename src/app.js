@@ -215,7 +215,7 @@ $("#scroller").innerHTML = `
   <p class="kicker rv">03 · Projects</p>
   <h2 class="sec rv" id="h-projects">Projects</h2>
   <div class="grid">${SHOWN.map((p, i) => `
-    <article class="card glass jelly rv" style="--rd:${((i % 3) * 0.1).toFixed(2)}s" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(p.name)} — open details">
+    <article class="card glass jelly rv" style="--rd:${((i % 3) * 0.1).toFixed(2)}s" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(p.name)}: open details">
       <div class="top"><span class="emblem" style="color:var(--ink)">${emblem(p)}</span>
         <span class="meta"><span>${esc(p.year)}</span>${statusHTML(p)}</span></div>
       <h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p>
@@ -227,7 +227,7 @@ $("#scroller").innerHTML = `
   <p class="kicker rv">04 · ${esc(KIT.name)}</p>
   <h2 class="sec rv" id="h-toolkit">${esc(KIT.name)}</h2>
   <p class="kit-intro rv">${esc(KIT.summary)}</p>
-  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(" — "); const list = items.replace(/\.$/, "").split(", ");
+  <div class="stones">${KIT.points.map((pt, i) => { const [h, items = ""] = pt.split(": "); const list = items.replace(/\.$/, "").split(", ");
     return `<div class="stone glass refract rv" style="--rd:${(i * 0.12).toFixed(2)}s"><h3>${esc(h)}</h3><ul class="chips">${list.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`; }).join("")}</div>
   <p class="kitstatus rv">${KIT.status.map((s) => esc(s.label)).join(" · ")}</p>
 </div></section>
@@ -382,7 +382,7 @@ Object.assign(tgt, { cloud: 0.25, wind: 0.2, windX: 1, moonPhase: 0.5 });
 const cur = JSON.parse(JSON.stringify(tgt));
 cur.flash = 0; cur.time = 0; cur.scroll = 0; cur.mouse = [0.5, 0.3]; cur.rm = RM;
 window.SKY = cur;
-let liveNow = { phase: "morning", cond: null, condLabel: "—", el: 0 };
+let liveNow = { phase: "morning", cond: null, condLabel: "-", el: 0 };
 
 function computeTargets(snap) {
   const now = Date.now();
@@ -527,7 +527,7 @@ function localSunTimes() {
     if (prev >= 0 && e < 0 && set == null) set = ms - 5 * 60000 * (e / (e - prev));
     prev = e;
   }
-  const f = (ms) => (ms == null ? "—" : fmt(localParts(ms)));
+  const f = (ms) => (ms == null ? "-" : fmt(localParts(ms)));
   return [f(rise), f(set)];
 }
 const el = (id) => D.getElementById(id);
@@ -543,24 +543,24 @@ function updateReadout() {
   const ph = PHASE_NAME[info.phase];
   setTxt("r-phase", ph); setTxt("rp-phase", ph + (S.override.phase ? " · painted" : ""));
   const c = S.wx;
-  const condLabel = S.override.cond ? COND_NAME[S.override.cond] + " · painted" : c ? wmo(c.weather_code)[1] : "—";
+  const condLabel = S.override.cond ? COND_NAME[S.override.cond] + " · painted" : c ? wmo(c.weather_code)[1] : "-";
   setTxt("rp-cond", condLabel);
   const ok = (v) => c && typeof v === "number" && isFinite(v);
-  setTxt("r-temp", ok(c && c.temperature_2m) ? `${Math.round(c.temperature_2m)}°C` : "—°");
-  setTxt("rp-temp", ok(c && c.temperature_2m) ? `${c.temperature_2m.toFixed(1)} °C` : "—");
-  setTxt("rp-feels", ok(c && c.apparent_temperature) ? `${c.apparent_temperature.toFixed(1)} °C` : "—");
-  setTxt("rp-wind", ok(c && c.wind_speed_10m) ? `${Math.round(c.wind_speed_10m)} km/h` : "—");
-  setTxt("rp-hum", ok(c && c.relative_humidity_2m) ? `${Math.round(c.relative_humidity_2m)}%` : "—");
+  setTxt("r-temp", ok(c && c.temperature_2m) ? `${Math.round(c.temperature_2m)}°C` : "-°");
+  setTxt("rp-temp", ok(c && c.temperature_2m) ? `${c.temperature_2m.toFixed(1)} °C` : "-");
+  setTxt("rp-feels", ok(c && c.apparent_temperature) ? `${c.apparent_temperature.toFixed(1)} °C` : "-");
+  setTxt("rp-wind", ok(c && c.wind_speed_10m) ? `${Math.round(c.wind_speed_10m)} km/h` : "-");
+  setTxt("rp-hum", ok(c && c.relative_humidity_2m) ? `${Math.round(c.relative_humidity_2m)}%` : "-");
   const [lr, ls] = S.rise ? [S.rise, S.set] : localSunTimes();
   setTxt("rp-rise", lr); setTxt("rp-set", ls);
   setTxt("rp-src", (S.wx ? "Weather: Open-Meteo · " : "Weather offline · ") + (S.src === "geo" ? "precise location" : S.src === "ip" ? "approximate location" : "default location") + " · sun & moon computed locally");
   // greeting
   setTxt("greet-a", greeting(lp.h));
   const ck = liveNow.cond;
-  setTxt("greet-b", ck ? ` — ${CLAUSE[ck]}.` : "");
+  setTxt("greet-b", ck ? `, ${CLAUSE[ck]}.` : "");
   const fw = { night: ["Good night", "stars"], blue: ["Enjoy the", "blue hour"], dawn: ["Enjoy the", "dawn"], morning: ["Have a good", "morning"], midday: ["Have a good", "day"], afternoon: ["Enjoy the", "afternoon"], golden: ["Enjoy the", "golden hour"], sunset: ["Enjoy the", "sunset"], dusk: ["Have a good", "evening"] }[info.phase];
   const fh = el("h-contact");
-  if (fh) { const html = info.phase === "night" ? `Good night — <em>sleep well.</em>` : `${fw[0]} <em>${fw[1]}.</em>`; if (fh.dataset.h !== html) { fh.dataset.h = html; fh.innerHTML = html; } }
+  if (fh) { const html = info.phase === "night" ? `Good night, <em>sleep well.</em>` : `${fw[0]} <em>${fw[1]}.</em>`; if (fh.dataset.h !== html) { fh.dataset.h = html; fh.innerHTML = html; } }
   // picker state
   $$("#pk-phase button").forEach((b) => b.classList.toggle("on", b.dataset.v === S.override.phase));
   $$("#pk-cond button").forEach((b) => b.classList.toggle("on", b.dataset.v === S.override.cond));
